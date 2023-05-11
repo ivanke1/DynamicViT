@@ -251,6 +251,7 @@ def validate(val_loader, model, criterion):
 
 
     with torch.no_grad():
+        start_inf = time.time()
         end = time.time()
         for i, (images, target) in enumerate(val_loader):
             images = images.cuda()
@@ -272,7 +273,8 @@ def validate(val_loader, model, criterion):
 
             if i % 20 == 0:
                 progress.display(i)
-
+        end_inf = time.time()
+        print(end_inf-start_inf)
         # TODO: this should also be done with the ProgressMeter
         print(' * Acc@1 {top1.avg:.3f} Acc@5 {top5.avg:.3f}'
               .format(top1=top1, top5=top5))
