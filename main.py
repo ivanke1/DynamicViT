@@ -341,7 +341,7 @@ def main(args):
             patch_size=16, embed_dim=384, depth=12, num_heads=6, mlp_ratio=4, qkv_bias=True, 
         pruning_loc=PRUNING_LOC, token_ratio=KEEP_RATE, distill=True
         )
-        pretrained = torch.load('./pretrained/deit_small_patch16_224-cd65a155.pth', map_location='cpu')
+        pretrained = torch.load('../deit_small_patch16_224-cd65a155.pth', map_location='cpu')
         teacher_model = VisionTransformerTeacher(
             patch_size=16, embed_dim=384, depth=12, num_heads=6, mlp_ratio=4, qkv_bias=True)
     elif args.model == 'deit-b':
