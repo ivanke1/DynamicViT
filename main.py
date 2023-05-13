@@ -203,7 +203,7 @@ def main(args):
     np.random.seed(seed)
     cudnn.benchmark = True
 
-    dataset_train, args.nb_classes = build_dataset(is_train=True, args=args)
+    dataset_train, args.nb_classes = build_dataset(is_train=False, args=args)
     if args.disable_eval:
         args.dist_eval = False
         dataset_val = None
